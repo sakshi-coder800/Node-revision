@@ -42,14 +42,27 @@
 
 
 
-// input from command line  
-const fs= require("fs");
-const { argv } = require("process");
-// fs.writeFileSync("sakshi.txt ", "hello sakshi")
-// console.log(process.argv)
+// // input from command line  
+// const fs= require("fs");
+// const { argv } = require("process");
+// // fs.writeFileSync("sakshi.txt ", "hello sakshi")
+// // console.log(process.argv)
+
+// // create file using output  
+// fs.writeFileSync(argv[2],argv[3]) // 2nd argv value take as a file name and 3rd take as a file content
 
 
 
-// create file using output  
 
-fs.writeFileSync(argv[2],argv[3]) // 2nd argv value take as a file name and 3rd take as a file content
+
+
+// // show file listing
+// const fs= require("fs");
+// const path= require("path");
+// const dirpath= path.join(__dirname, "curd file");
+// console.log(path.join(__dirname)) // they return the directory name
+// const fileName= `${dirpath}/text.html`;
+// fs.writeFileSync( fileName, "sakshdifasf xsd f g g g g g g") // create file inside the curd folder
+
+
+

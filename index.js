@@ -197,7 +197,32 @@
 
 
 //  make first html page 
- const express = require("express");
+//  const express = require("express");
+// const path = require("path");
+
+// const app = express();
+
+// // Define the directory containing your static files
+// const staticDir = path.join(__dirname, "html");
+
+// // Serve static files from the specified directory
+// app.use(express.static(staticDir));
+
+// // Start the server on port 8080
+// const PORT = 8080;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on http://localhost:${PORT}`);
+// });
+
+
+
+
+
+
+// 404 error page ,Reemove extension from URL
+
+//  make first html page 
+const express = require("express");
 const path = require("path");
 
 const app = express();
@@ -209,17 +234,17 @@ const staticDir = path.join(__dirname, "html");
 app.use(express.static(staticDir));
 
 // Start the server on port 8080
+app.get("/",(req,res)=>{
+    res.sendFile(`${staticDir}/index.html`)
+})
+app.get("/about",(req,res)=>{
+    res.sendFile(`${staticDir}/about.html`)
+})
+
 const PORT = 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-// app.get("/",(req,res)=>{
-//     res.send("hello world")
-// })
-
-// app.get("/about",(req,res)=>{
-//     res.send("hello world :about page")
-// })
 
 // app.listen(8080,(req,res)=>{
 //     console.log("Server  running on port 8080")

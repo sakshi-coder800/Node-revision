@@ -29,16 +29,27 @@
 
 
 // create server 
-const http= require("http");
-const data= require("./data");
+// const http= require("http");
+// const data= require("./data");
 
-http.createServer((req,res)=>{
-res.writeHead(200,{'Content-Type' : 'application\json'});
-res.write(JSON.stringify(data));
-res.end();
-}).listen(5000)
-
-
+// http.createServer((req,res)=>{
+// res.writeHead(200,{'Content-Type' : 'application\json'});
+// res.write(JSON.stringify(data));
+// res.end();
+// }).listen(5000)
 
 
 
+
+
+// input from command line  
+const fs= require("fs");
+const { argv } = require("process");
+// fs.writeFileSync("sakshi.txt ", "hello sakshi")
+// console.log(process.argv)
+
+
+
+// create file using output  
+
+fs.writeFileSync(argv[2],argv[3]) // 2nd argv value take as a file name and 3rd take as a file content

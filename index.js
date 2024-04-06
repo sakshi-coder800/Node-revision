@@ -71,12 +71,51 @@
 // create 5 files inside ""curd file folder ""
 
 
+// const fs= require("fs");
+// const path= require("path");
+// const dirpath= path.join(__dirname, "curd file");
+// for( var i=1;i<11 ;i++){
+//     fs.writeFileSync(`${dirpath}/index ${i}.txt`, `File number ${i}`)
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CURD With file system 
+
 const fs= require("fs");
-const path= require("path");
-const dirpath= path.join(__dirname, "curd file");
-for( var i=1;i<11 ;i++){
-    fs.writeFileSync(`${dirpath}/index ${i}.txt`, `File number ${i}`)
-}
+const path= require("path"); 
+// create a file
+// fs.writeFileSync("filename,txt","file content")
 
 
+// const filePath= "filename.txt"
+// // read a file
+// fs.readFile(filePath,'utf8',(err,item)=>{
+//     console.log(item);
+// })
 
+
+// append file  (update file)
+// fs.appendFile("filename.txt","new data for add inside the file",(err,item)=>{
+// if(!err)  {console.log("file is updated")}
+// })
+
+
+// delete file 
+// fs.unlinkSync("filename.txt")

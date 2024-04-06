@@ -60,9 +60,23 @@
 // const fs= require("fs");
 // const path= require("path");
 // const dirpath= path.join(__dirname, "curd file");
+
 // console.log(path.join(__dirname)) // they return the directory name
+
 // const fileName= `${dirpath}/text.html`;
 // fs.writeFileSync( fileName, "sakshdifasf xsd f g g g g g g") // create file inside the curd folder
+
+
+
+// create 5 files inside ""curd file folder ""
+
+
+const fs= require("fs");
+const path= require("path");
+const dirpath= path.join(__dirname, "curd file");
+for( var i=1;i<11 ;i++){
+    fs.writeFileSync(`${dirpath}/index ${i}.txt`, `File number ${i}`)
+}
 
 
 

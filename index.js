@@ -98,8 +98,8 @@
 
 // CURD With file system 
 
-const fs= require("fs");
-const path= require("path"); 
+// const fs= require("fs");
+// const path= require("path"); 
 // create a file
 // fs.writeFileSync("filename,txt","file content")
 
@@ -119,3 +119,77 @@ const path= require("path");
 
 // delete file 
 // fs.unlinkSync("filename.txt")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// create server  using express
+
+const express=require("express");
+
+
+const app=express();
+
+
+app.get("/",(req,res)=>{
+    res.send("hello world")
+})
+
+app.get("/about",(req,res)=>{
+    res.send("hello world :about page")
+})
+
+app.listen(8080,(req,res)=>{
+    console.log("Server  running on port 8080")
+})

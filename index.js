@@ -12,10 +12,33 @@
 
 
 // create server 
-const http =require("http");
+// const http =require("http");
+// http.createServer((req,res)=>{
+//     res.writeHead(200,{'Content-Type':'application\json'});
+//     res.write("Hello Sakshi Maheshwari");
+//     res.write(JSON.stringify({name :"sakshi",age :24}));
+//     res.end()
+// }).listen(8080);
+
+
+
+
+
+
+// import data from ""data.js"" file using nodejs 
+
+
+// create server 
+const http= require("http");
+const data= require("./data");
+
 http.createServer((req,res)=>{
-    res.writeHead(200,{'Content-Type':'application\json'});
-    // res.write("Hello Sakshi Maheshwari");
-    res.write(JSON.stringify({name :"sakshi",age :24}));
-    res.end()
-}).listen(8080);
+res.writeHead(200,{'Content-Type' : 'application\json'});
+res.write(JSON.stringify(data));
+res.end();
+}).listen(5000)
+
+
+
+
+

@@ -329,34 +329,91 @@
 
 
 
-// Router level middleware example
+// // Router level middleware example
+// const express = require("express");
+// const path = require("path");
+// const  reqFilter  = require("./router_level_middleware");
+
+// const app= express();
+
+// app.get("/ageuser",reqFilter,(req,res)=>{
+// res.send("application level middleware") 
+// }) // functional level middleware
+
+// const PORT=8080
+//  app.listen(PORT,()=>{
+//     console.log("running on port")
+//  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // mongodb use for create Curd and use database with node js 
+// const express = require("express");
+// const {MongoClient } = require("mongodb");
+// const url="mongodb://localhost:27017/";
+// const dbName= "node-curd"
+// const mongodb= new MongoClient(url);
+
+
+//  async function  connectDatabase(){
+   
+    
+//     const connetion= await mongodb.connect();
+//     console.log("connected to database");
+//  }
+//  connectDatabase()
+
+// const app= express();
+
+
+// const PORT=8080
+//  app.listen(PORT,()=>{
+//     console.log("running on port")
+//  })
+
+
+
+
+
+// mongodb use for create Curd and use database with node js 
 const express = require("express");
-const path = require("path");
-const  reqFilter  = require("./router_level_middleware");
+const {MongoClient } = require("mongodb");
+const url="mongodb://localhost:27017/";
+const dbName= "node-curd"
+const mongodb= new MongoClient(url);
+
+
+ async function  connectDatabase(){
+   
+    
+    const connetion= await mongodb.connect();
+    console.log("connected to database");
+ }
+ connectDatabase()
 
 const app= express();
 
-app.get("/ageuser",reqFilter,(req,res)=>{
-res.send("application level middleware") 
-}) // functional level middleware
 
 const PORT=8080
  app.listen(PORT,()=>{
     console.log("running on port")
  })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

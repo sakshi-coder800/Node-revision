@@ -395,5 +395,55 @@
 // mongodb use for create Curd and use database with node js 
 // curd with "mongodb"
 const express = require("express");
+const {MongoClient} = require("mongodb")
 
+const url='mongodb://localhost:27017/';
+const dbName= "curd-node-mongodb";
 
+const client= new MongoClient(url)
+
+// // read data --------------------------------
+// async function  getData(){
+//    const result = await client.connect();
+//    // console.log("connected success");
+//    const db= result.db(dbName)
+//    let collection= db.collection("Products");
+//    const response=  await collection.find({ }).toArray();
+//    console.log("response",response)
+//    }
+//    getData();
+   
+   // insert data --------------------------------
+   // async function insertData(){
+      // const result= await client.connect();
+      // const db=result.db(dbName);
+      // const collection= db.collection("Products");
+      // const response = await collection.insertOne({name :"Saksadas"});
+      // console.log(response)
+      // }
+      // insertData()
+   
+
+      // update data --------------------------------
+
+// async function updateData(){
+//       const result= await client.connect();
+//       const db=result.db(dbName);
+//       const collection= db.collection("Products");
+//       const response = await collection.updateMany({name :"Saksadas"}, {$set : {
+//          name :"sasadkf f f f "
+//       }}
+//    );
+//       console.log(response)
+//       }
+//       updateData()
+
+// delete data  ------------------------
+async function deleteData(){
+   const result= await client.connect();
+   const db=result.db(dbName);
+   const collection= db.collection("Products");
+   const response = (await collection.deleteOne({name :"sasa"})).deletedCount;
+   console.log(response)
+   }
+   deleteData()

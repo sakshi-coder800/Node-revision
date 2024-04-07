@@ -265,6 +265,34 @@
 
 
 
+ // ejs template engine 
+const express = require("express");
+const path = require("path");
+
+const filepath= path.join(__dirname,"views")
+console.log(filepath)
+const fileName= `${filepath}/demo`
+
+const app= express();
+
+
+app.set('view engine','ejs'); //Sets EJS as the view engine for your application.
+ app.get("/",(req,res)=>{
+
+
+    const user={
+        name :"Sakshi", age :20, skills : [1,3,2,4,5,6,4,6,4]
+    }
+    res.render('demo', {user});
+ })
+ const PORT=8080
+ app.listen(PORT,()=>{
+    console.log("running on port")
+ })
+
+
+
+
 
 
 

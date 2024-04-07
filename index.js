@@ -265,30 +265,94 @@
 
 
 
- // ejs template engine 
+//  // ejs template engine 
+// const express = require("express");
+// const path = require("path");
+
+// const filepath= path.join(__dirname,"views")
+// console.log(filepath)
+// const fileName= `${filepath}/demo`
+
+// const app= express();
+
+
+// app.set('view engine','ejs'); //Sets EJS as the view engine for your application.
+//  app.get("/",(req,res)=>{
+
+
+//     const user={
+//         name :"Sakshi", age :20, skills : [1,3,2,4,5,6,4,6,4]
+//     }
+//     res.render('demo', {user});
+//  })
+//  const PORT=8080
+//  app.listen(PORT,()=>{
+//     console.log("running on port")
+//  })
+
+
+
+
+
+
+
+// // middleware example
+//  const express = require("express");
+//  const path = require("path");
+ 
+//  const app= express();
+ 
+// // application level middlewaare
+// const reqFilter= ((req,res,next,)=>{
+//     console.log("middleware calling");
+//     next();
+// })
+
+// app.use(reqFilter); // application level middleware 
+
+// app.get("/",(req,res)=>{
+// res.send("application level middleware") 
+// })
+
+// const PORT=8080
+//   app.listen(PORT,()=>{
+//      console.log("running on port")
+//   })
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+// Router level middleware example
 const express = require("express");
 const path = require("path");
-
-const filepath= path.join(__dirname,"views")
-console.log(filepath)
-const fileName= `${filepath}/demo`
+const  reqFilter  = require("./router_level_middleware");
 
 const app= express();
 
+app.get("/ageuser",reqFilter,(req,res)=>{
+res.send("application level middleware") 
+}) // functional level middleware
 
-app.set('view engine','ejs'); //Sets EJS as the view engine for your application.
- app.get("/",(req,res)=>{
-
-
-    const user={
-        name :"Sakshi", age :20, skills : [1,3,2,4,5,6,4,6,4]
-    }
-    res.render('demo', {user});
- })
- const PORT=8080
+const PORT=8080
  app.listen(PORT,()=>{
     console.log("running on port")
  })
+
+
+
+
+
+
+
+
+
 
 
 

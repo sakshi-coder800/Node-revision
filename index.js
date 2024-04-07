@@ -393,27 +393,7 @@
 
 
 // mongodb use for create Curd and use database with node js 
+// curd with "mongodb"
 const express = require("express");
-const {MongoClient } = require("mongodb");
-const url="mongodb://localhost:27017/";
-const dbName= "node-curd"
-const mongodb= new MongoClient(url);
-
-
- async function  connectDatabase(){
-   
-    
-    const connetion= await mongodb.connect();
-    console.log("connected to database");
- }
- connectDatabase()
-
-const app= express();
-
-
-const PORT=8080
- app.listen(PORT,()=>{
-    console.log("running on port")
- })
 
 
